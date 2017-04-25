@@ -16,15 +16,15 @@
                 $.ajax
                 ({
                     type: 'GET',
-                    url: 'http://www.alharamcenter.com.sa:8080/TestAPI/api/employees',
+                    url: 'https://jsonplaceholder.typicode.com/posts',
                     dataType: 'json',
                     //dataType: 'jsonp',
                     success:
                         function (data) {
                             ulEmployees.empty();
                             $.each(data, function (index, val) {
-                                var fullname = val.FirstName + ' ' + val.LastName;
-                                ulEmployees.append('<li>' + fullname + '</li>');
+                                var strtitle = val.title; //+ ' ' + val.LastName;
+                                ulEmployees.append('<li>' + strtitle + '</li>');
                             });
                         }
                 });
